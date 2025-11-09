@@ -32,7 +32,7 @@ import torch.nn.functional as F
 from opt_einsum import contract
 from qiskit_ibm_runtime import QiskitRuntimeService
 from qiskit.exceptions import QiskitError
-from qiskit.providers.aer.noise.device.parameters import gate_error_values
+from qiskit_aer.noise.device.parameters import gate_error_values
 from torchpack.utils.config import Config
 from torchpack.utils.logging import logger
 

@@ -48,7 +48,7 @@ from qiskit_nature.circuit.library import UCCSD, HartreeFock
 from qiskit.circuit.library import EfficientSU2
 from qiskit.algorithms.optimizers import COBYLA, SPSA, SLSQP
 from qiskit.opflow import TwoQubitReduction
-from qiskit import BasicAer, Aer
+from qiskit_aer import Aer
 from qiskit.utils import QuantumInstance
 from qiskit.utils.mitigation import CompleteMeasFitter
 from qiskit.providers.aer.noise import NoiseModel
@@ -110,7 +110,7 @@ def exact_solver(problem, converter):
     return result
 
 
-backend = BasicAer.get_backend("statevector_simulator")
+backend = Aer.get_backend("statevector_simulator")
 distances = np.arange(0.5, 4.0, 0.2)
 exact_energies = []
 vqe_energies = []

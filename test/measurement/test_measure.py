@@ -25,7 +25,8 @@ SOFTWARE.
 import torchquantum as tq
 
 from torchquantum.plugin import op_history2qiskit
-from qiskit import Aer, transpile
+from qiskit import transpile
+from qiskit_aer import Aer
 import numpy as np
 
 

@@ -27,7 +27,8 @@ import pickle
 import sys
 import copy
 from qiskit import QuantumCircuit
-from qiskit import Aer, transpile
+from qiskit_aer import Aer, AerSimulator
+from qiskit import transpile
 from rand_circ_native import *
 
 

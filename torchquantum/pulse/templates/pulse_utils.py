@@ -9,7 +9,7 @@ from qiskit.providers import aer
 from qiskit.providers.fake_provider import *
 from qiskit.circuit import Gate
 from qiskit.compiler import assemble
-from qiskit import pulse, QuantumCircuit, IBMQ
+from qiskit import pulse, QuantumCircuit
 from qiskit.pulse.instructions import Instruction
 from qiskit.pulse.transforms import block_to_schedule
 from qiskit_nature.drivers import UnitsType, Molecule

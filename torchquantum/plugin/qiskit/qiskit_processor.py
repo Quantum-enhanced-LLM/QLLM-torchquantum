@@ -27,9 +27,11 @@ import torchquantum as tq
 import pathos.multiprocessing as multiprocessing
 import itertools
 
-from qiskit import Aer, execute, IBMQ, transpile, QuantumCircuit
-from qiskit.providers.aer.noise import NoiseModel
-from qiskit.tools.monitor import job_monitor
+from qiskit_aer import Aer
+from qiskit import transpile, QuantumCircuit
+from qiskit_aer.noise import NoiseModel
+#from qiskit_ibm_provider.job import job_monitor
+#from qiskit_ibm_provider import IBMProvider
 from qiskit.exceptions import QiskitError
 from .qiskit_plugin import (
     tq2qiskit,
@@ -41,6 +43,7 @@ from torchquantum.util import (
     get_provider,
     get_provider_hub_group_project,
     get_circ_stats,
+    execute,
 )
 from .qiskit_macros import IBMQ_NAMES
 from tqdm import tqdm
@@ -49,8 +52,7 @@ from qiskit.transpiler import PassManager
 import numpy as np
 import datetime
 
-from .my_job_monitor import my_job_monitor
-
+from .my_job_monitor import my_job_monitor as job_monitor
 
 class EmptyPassManager(PassManager):
     def run(self, circuits, output_name: str = None, callback=None):
@@ -191,7 +193,7 @@ class QiskitProcessor(object):
 
         if self.backend is None:
             # initialize now
-            IBMQ.load_account()
+            # IBMQ.load_account()
             self.provider = get_provider_hub_group_project(
                 hub=self.hub,
                 group=self.group,

@@ -29,13 +29,15 @@ import qiskit.circuit.library.standard_gates as qiskit_gate
 import numpy as np
 
 from qiskit import QuantumCircuit, ClassicalRegister
-from qiskit import Aer, execute
+from qiskit import transpile
+from qiskit_aer import Aer
 from qiskit.circuit import Parameter
 from torchpack.utils.logging import logger
 from torchquantum.util import (
     switch_little_big_endian_matrix,
     find_global_phase,
     switch_little_big_endian_state,
+    execute
 )
 from typing import Iterable, List
 from torchquantum.functional import mat_dict

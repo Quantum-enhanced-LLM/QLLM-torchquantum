@@ -1,6 +1,7 @@
 import torchquantum as tq
 import qiskit
-from qiskit import Aer, execute
+from torchquantum.util import execute
+from qiskit_aer import Aer
 
 from torchquantum.util import (
     switch_little_big_endian_matrix,
